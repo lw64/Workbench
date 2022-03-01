@@ -6,6 +6,7 @@
     <property name="halign">center</property>
     <child>
       <object class="GtkImage">
+        <property name="name">logo</property>
         <property name="icon-name">re.sonny.Workbench</property>
         <property name="pixel-size">256</property>
         <style>
