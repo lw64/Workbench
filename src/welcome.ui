@@ -8,7 +8,8 @@
       <object class="GtkImage">
         <property name="name">logo</property>
         <property name="icon-name">re.sonny.Workbench</property>
-        <property name="pixel-size">256</property>
+        <property name="pixel-size">196</property>
+        <property name="margin-bottom">24</property>
         <style>
           <class name="icon-dropshadow" />
         </style>
@@ -17,6 +18,7 @@
     <child>
       <object class="GtkLabel">
         <property name="label">Welcome to Workbench</property>
+        <property name="margin-bottom">24</property>
         <style>
           <class name="title-1" />
         </style>
@@ -28,15 +30,19 @@
           name="label"
         >A sandbox for learning and playing with GNOME app &#xA; ideas or experiments.</property>
         <property name="justify">center</property>
+        <property name="margin-bottom">24</property>
       </object>
     </child>
     <child>
       <object class="GtkBox">
-        <property name="halign">center</property>
+        <property name="halign">start</property>
+        <property name="margin-bottom">12</property>
         <child>
           <object class="GtkImage">
+            <property name="name">logo</property>
             <property name="icon-name">update-symbolic</property>
             <property name="icon-size">inherit</property>
+            <property name="margin-end">12</property>
           </object>
         </child>
         <child>
@@ -51,11 +57,12 @@
     </child>
     <child>
       <object class="GtkBox">
-        <property name="halign">center</property>
+        <property name="halign">start</property>
         <child>
           <object class="GtkImage">
             <property name="icon-name">media-playback-start-symbolic</property>
             <property name="icon-size">normal</property>
+            <property name="margin-end">12</property>
           </object>
         </child>
         <child>
