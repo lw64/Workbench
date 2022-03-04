@@ -30,3 +30,28 @@ configure_file(
   install_dir: get_option('bindir')
 )
 
+dependencies = [
+  dependency('gtk4'),
+  dependency('glib-2.0'),
+  dependency('gobject-2.0'),
+]
+
+workbench_vala_src = [
+  'language-provider.vala',
+]
+
+workbench_lib = shared_library('workbench', workbench_vala_src,
+  dependencies: dependencies,
+  vala_gir: 'Workbench-1.0.gir',
+  install: true,
+  install_dir: [true, false, false, false],
+)
+
+g_ir_compiler = find_program('g-ir-compiler')
+custom_target('workbench typelib',
+  command: [g_ir_compiler, '--output', '@OUTPUT@', meson.current_build_dir() / 'Workbench-1.0.gir'],
+  output: 'Workbench-1.0.typelib',
+  depends: workbench_lib,
+  install: true,
+  install_dir: get_option('libdir') / 'girepository-1.0'
+)

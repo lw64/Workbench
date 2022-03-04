@@ -3,6 +3,9 @@
 import { programInvocationName, exit } from "system";
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
+import Workbench from "gi://Workbench";
+
+Workbench.hallo();
 
 const resource = Gio.resource_load(
   "/app/share/re.sonny.Workbench/workbench.gresource"
